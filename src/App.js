@@ -8,6 +8,7 @@ import ItemListContainer from './Components/Containers/ItemListContainer/ItemLis
 import Cart from './Components/Cart/Cart';
 import CartCustomProvider  from './Components/CartContext/CartContext';
 import Pago from './Components/Cart/Pago';
+import Error404 from "./Components/Error404/Error404"
 //--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--//
 
 
@@ -19,11 +20,12 @@ const App = () => {
     <CartCustomProvider>
       <NavBar />
       <Routes>
-        <Route path='/' element={<ItemListContainer greeting="Bienvenido"  />}/>
-        <Route path='/category/:categoryId' element={<ItemListContainer />}/>
-        <Route path="/product/:productId" element={<ItemDetailContainer />} />
-        <Route path='/carrito' element={<Cart/>}/>
-        <Route path='carrito/pago' element={<Pago/>} />
+        <Route exact path='/' element={<ItemListContainer greeting="Bienvenido"  />}/>
+        <Route exact path='/category/:categoryId' element={<ItemListContainer />}/>
+        <Route exact path="/product/:productId" element={<ItemDetailContainer />} />
+        <Route exact path='/carrito' element={<Cart/>}/>
+        <Route exact path='carrito/pago' element={<Pago/>} />
+        <Route path='*' element={<Error404/>} />
       </Routes>
 
     </CartCustomProvider>
