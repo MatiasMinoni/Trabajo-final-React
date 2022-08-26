@@ -9,6 +9,7 @@ import Cart from './Components/Cart/Cart';
 import CartCustomProvider  from './Components/CartContext/CartContext';
 import Pago from './Components/Cart/Pago';
 import Error404 from "./Components/Error404/Error404"
+import Footer  from './Components/Footer/Footer';
 //--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--//
 
 
@@ -19,15 +20,17 @@ const App = () => {
 <BrowserRouter>
     <CartCustomProvider>
       <NavBar />
+    
       <Routes>
         <Route exact path='/' element={<ItemListContainer greeting="Bienvenido"  />}/>
         <Route exact path='/category/:categoryId' element={<ItemListContainer />}/>
         <Route exact path="/product/:productId" element={<ItemDetailContainer />} />
         <Route exact path='/carrito' element={<Cart/>}/>
         <Route exact path='carrito/pago' element={<Pago/>} />
+        
         <Route path='*' element={<Error404/>} />
       </Routes>
-
+      <Footer/>
     </CartCustomProvider>
 </BrowserRouter>
 
