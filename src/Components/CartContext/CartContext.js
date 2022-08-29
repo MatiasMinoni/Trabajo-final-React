@@ -7,7 +7,7 @@ import React, { createContext, useState, useEffect } from 'react'
 
     const [products, setProducts] = useState([]);
     const [qtyProducts, setQtyProducts] = useState(0);
-
+  
 
     // Cantidad de productos
     const getQtyProducts = () => {

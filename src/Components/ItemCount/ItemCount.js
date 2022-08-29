@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import 'materialize-css/dist/css/materialize.min.css';
-
-
+import {db} from './../Firebase/Firebase';
+import {getDoc, collection, doc, where, query, getFirestore, getDocs, addDoc, } from 'firebase/firestore';
+import { useParams } from "react-router-dom";
+import { async } from "@firebase/util";
+import { getDatabase } from "firebase/database";
+import {cartContext } from "../CartContext/CartContext";
+ import {ItemDetail} from "../Containers/ItemDetailContainer/ItemDetail";
+import { ProductionQuantityLimitsSharp } from "@mui/icons-material";
 
     
 
-export const ItemCount =({initial, Count, setCount, cantidad, onAdd}) => {
-[Count, setCount] = useState(initial);
+export const ItemCount =({initial, Count, setCount, cantidad, onAdd }) => {
+    [Count, setCount] = useState(initial);
+  
 
+   
 function sumar(){
         
 setCount(Count+1);

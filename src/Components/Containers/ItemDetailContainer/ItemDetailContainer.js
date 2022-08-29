@@ -10,11 +10,12 @@ export const ItemDetailsContainer = () => {
     const [loaded, setLoaded] = useState(true)
 
     const { productId } = useParams();
-
     useEffect(() => {
         const productCollection= collection(db, 'items');
+
 const refDoc= doc(productCollection, productId);
 getDoc(refDoc)
+
 .then(result=>{
     const product={ 
         id:result.id,
@@ -24,13 +25,8 @@ getDoc(refDoc)
     })
     .catch(err=>console.log(err))
          .finally(()=>setLoaded(false))
-        // fetch(`https://fakestoreapi.com/products/${productId}`)
-        //     .then(res=>res.json())
-        //     .then(data=>setProduct(data))
-        //     .catch(err=>console.log(err))
-        //     .finally(()=>setLoaded(false))
+  
     }, [productId]);
-
     return (
         <>
             {loaded ? <CircularProgress  /> : <ItemDetail product={product} />  }

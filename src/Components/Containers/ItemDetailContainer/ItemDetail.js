@@ -1,7 +1,7 @@
 import { AddCardTwoTone } from "@mui/icons-material";
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "../../ItemCount/ItemCount"
+import {ItemCount, cantidad} from "../../ItemCount/ItemCount"
 import {cartContext } from "../../CartContext/CartContext";
 
 
@@ -10,10 +10,9 @@ import {cartContext } from "../../CartContext/CartContext";
 
 
 const ItemDetail = ({ product }) => {
-
   const [buyFinalized, setBuyFinalized] = useState(false)
   const { addProduct } = useContext(cartContext);
- 
+
   const onAdd = (count) => {
     addProduct({...product, quantity:count});
   setBuyFinalized(true);
@@ -48,7 +47,7 @@ const ItemDetail = ({ product }) => {
             </Link>
             <Link to="/"><button className="waves-effect waves-light btn">Seguir comprando</button></Link>
             </div>
-          : <ItemCount initial={1} stock={5} onAdd={onAdd} />}
+          : <ItemCount initial={1} cantidad={product.stock} onAdd={onAdd} />}
       </div>
   );
 };
