@@ -1,5 +1,5 @@
 Bienvenidos a "Micro Store"
-Este e-commerse se diseño para validar lo aprendido en mi camino por React JS y fue diseñado completamente desde Front End.
+Este e-commerse se diseño para validar lo aprendido en mi camino por React JS y fue diseñado mediante Html, Css, Js y Jsx.
 
 Como ejecutarlo
 Para ejecutar este codigo ejecutar desde consola Node JS el comando "npm install"
