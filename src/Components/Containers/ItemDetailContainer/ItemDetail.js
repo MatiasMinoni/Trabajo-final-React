@@ -1,11 +1,9 @@
-import { AddCardTwoTone } from "@mui/icons-material";
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import {ItemCount, cantidad} from "../../ItemCount/ItemCount"
+import {ItemCount} from "../../ItemCount/ItemCount"
 import {cartContext } from "../../CartContext/CartContext";
 
 
-//--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--//
 
 
 
@@ -27,7 +25,7 @@ const ItemDetail = ({ product }) => {
               <span  class="card-title">{product.title}</span>
             </div>
             <div class="card-content">
-              <p >Precio: {product.price}</p>
+              <p >Precio: {product.price}$ USD</p>
               <p >{product.description}</p> 
       
             </div>

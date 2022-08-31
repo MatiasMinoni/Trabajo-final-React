@@ -9,7 +9,6 @@ import React, { createContext, useState, useEffect } from 'react'
     const [qtyProducts, setQtyProducts] = useState(0);
   
 
-    // Cantidad de productos
     const getQtyProducts = () => {
         let qty = 0;
         products.forEach(product => {qty += product.qty});
@@ -18,6 +17,7 @@ import React, { createContext, useState, useEffect } from 'react'
 
     useEffect(() => {
         getQtyProducts();
+        
             }, [products])
 
     const addProduct = (product) => {

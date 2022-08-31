@@ -1,16 +1,14 @@
-import React, {useContext, useState, createContext, useEffect, Children} from 'react'
+import React, {useContext, useState} from 'react'
 
-
-import { cartContext } from '../CartContext/CartContext';
 import { Link } from 'react-router-dom';
+import { cartContext } from '../CartContext/CartContext';
 import '../../App.css';
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '../Firebase/Firebase';
 import '../../App.css';
-import { ClassNames } from '@emotion/react';
 
 const Pago = () => {
-    const { products , getTotal, comprobante, clear } = useContext(cartContext);
+    const { products , getTotal, comprobante } = useContext(cartContext);
     const [nombre, setNombre]=useState(""); 
     const [apellido, setApellido]=useState('');
     const [email, setEmail]=useState('');
@@ -22,7 +20,7 @@ const Pago = () => {
     const [mes, setMes]=useState('');
     const [anio, setAnio]=useState('');
     const [cvv, setCvv]=useState('');
-    const [buyFinalized, setBuyFinalized] = useState(false)
+    const [buyFinalized, setBuyFinalized] = useState(true)
 
 
 
@@ -60,12 +58,8 @@ const datosComprador = [
          items:[{products}],
          date:serverTimestamp(),
          total: getTotal()
-       
          }
-
          )
-         setBuyFinalized(false)
-
         }
      
      
@@ -73,8 +67,11 @@ const datosComprador = [
     return(
 
 <>
- <h1>Pago</h1>
-<form>
+ { buyFinalized ? 
+ <div>
+    <h1>Pago</h1>
+    
+<form onSubmit={finalizarCompra}>
     <label>
         Nombre:
         <input type="text"  value={nombre} onChange={(e) => setNombre(e.target.value)}  placeholder="Nombre" required={true}
@@ -138,20 +135,22 @@ const datosComprador = [
     </label>
     <label>
         CVV:
-        <input type="number"  value={cvv} onChange={(e) => setCvv(e.target.value)}  placeholder="CVV" required={true}
+        <input type="number"  value={cvv} onChange={(e) => setCvv(e.target.value)}  placeholder="CVV" required
 
 />
     </label>
+<input type="submit" value={"Finalizar"} className="waves-effect waves-light btn"/>
 
-
-<button onClick={(finalizarCompra)} className='waves-effect waves-light btn'>Finalizar</button>
 </form> 
-
-{setBuyFinalized ?
-<p></p>
+</div>
 :
-<p>{comprobante}</p>
+<div>
+<h2>Muchas gracias por tu compra!</h2>
+<p>Tu numero de orden es: {comprobante}</p>
+<Link to="/">Seguir comprando</Link>
+</div>
 }
+
 
 
 </>

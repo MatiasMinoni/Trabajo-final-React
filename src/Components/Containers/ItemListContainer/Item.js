@@ -16,7 +16,7 @@ return (
         <span  class="card-title">{producto.title}</span>
       </div>
       <div class="card-content">
-        <p >Precio: {producto.price} </p>
+        <p >Precio: {producto.price}$ USD </p>
         <p >{producto.description}</p> 
       </div>
       <div class="card-action">

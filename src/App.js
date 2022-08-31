@@ -10,7 +10,6 @@ import CartCustomProvider  from './Components/CartContext/CartContext';
 import Pago from './Components/Cart/Pago';
 import Error404 from "./Components/Error404/Error404"
 import Footer  from './Components/Footer/Footer';
-//--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--IMPORTS--//
 
 
 const App = () => {

@@ -10,7 +10,7 @@ if (products.length === 0) {
 
   return (
    <>
-<h1>No tienes articulos en tu carrito, <Link to="/">click para explorar </Link></h1>
+<h1>No tienes articulos en tu carrito <br/><Link className='waves-effect waves-light btn' to="/">click para explorar </Link></h1>
 </>
   )}
 
@@ -20,14 +20,14 @@ if (products.length === 0) {
     <table className='table_carrito'>
   
         
-        {products.map(product => <tr className='producto_carrito' key={product.id}> <h4 ><img className='img_carrito' src={product.image} alt={product.title} />  {product.title} Precio: {product.price} </h4>  <button onClick={()=>deleteProduct(product.id)}>X</button>         <p>Unidades x {product.quantity}</p>
+        {products.map(product => <tr className='producto_carrito' key={product.id}> <h4 ><img className='img_carrito' src={product.image} alt={product.title} />  {product.title} Precio: {product.price} </h4>  <button className='waves-effect waves-light btn' onClick={()=>deleteProduct(product.id)}>Eliminar item</button>         <p>Unidades x {product.quantity}</p>
         
-         <button onClick={clear}> limpiar</button>
+         <button onClick={clear} className='waves-effect waves-light btn'> limpiar</button>
 
             </tr>)}
 
-            <p>Total:{getTotal() +"$"}</p>
-<Link to="./pago">Siguiente</Link>
+            <p>Total:{getTotal() +"$ USD"}</p>
+<Link className='waves-effect waves-light btn'  to="./pago">Siguiente</Link>
     </table>
 
  
