@@ -8,6 +8,7 @@ Una vez instalado inicializas el servidor con el comando "npm start"
 
 Sobre Mi
 Soy Matias Minoni, desarrollador Full Stack en formación, a continuacion comparto mis redes donde pueden encontrar más sobre mi trabajo!
+
 https://github.com/MatiasMinoni
 
 https://www.linkedin.com/in/matias-alberto-minoni-b1b750183/
