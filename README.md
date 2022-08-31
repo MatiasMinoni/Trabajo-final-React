@@ -12,3 +12,5 @@ Soy Matias Minoni, desarrollador Full Stack en formación, a continuacion compar
 https://github.com/MatiasMinoni
 
 https://www.linkedin.com/in/matias-alberto-minoni-b1b750183/
+
+Pagina: https://scintillating-sfogliatella-339b7b.netlify.app/
